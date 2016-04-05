@@ -11,15 +11,15 @@ feature 'Visitor visits Emprego Ja home page' do
                company: 'Campus Code',
                description: 'Dev Junior Rails com ao menos um projeto',
                location: 'São Paulo')
-    # Job.create(title: 'Vaga de QA',
-    #            category: 'QA',
-    #            company: 'Campus Code',
-    #            description: 'QA Junior com ao menos um projeto',
-    #            location: 'São Paulo')
+    Job.create(title: 'Vaga de QA',
+                category: 'QA',
+                company: 'Campus Code',
+                description: 'QA Junior com ao menos um projeto',
+                location: 'São Paulo')
     visit root_path
     expect(page).to have_content('Vaga de Dev')
     expect(page).to have_content('Campus Code')
     expect(page).to have_content('São Paulo')
-    # expect(page).to have_content('Vaga de QA')
+     expect(page).to have_content('Vaga de QA')
   end
 end

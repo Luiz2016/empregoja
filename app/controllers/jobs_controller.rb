@@ -12,6 +12,8 @@ class JobsController < ApplicationController
   def edit
   end
 
+
+
   def update
     if @job.update(job_params)
       redirect_to @job
@@ -28,6 +30,7 @@ class JobsController < ApplicationController
       render :new
     end
   end
+
 
   private
 

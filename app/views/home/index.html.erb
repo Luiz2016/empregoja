@@ -5,7 +5,11 @@
       <p><%= job.location %></p>
       <p><%= job.company.name %></p>
       <p><%= job.category.name %></p>
+      <% if job.recent? %>
+      <p><%= 'Novidade' %></p>
+      <% end %>
       <%= link_to 'Ver mais', job %>
+
     </div>
   <% end %>
 </section>
@@ -19,4 +23,3 @@
     <%= link_to category.name, category %>
   <% end %>
 </aside>
-

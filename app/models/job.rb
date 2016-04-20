@@ -3,6 +3,7 @@ class Job < ActiveRecord::Base
   DAYS_TO_BE_EXPIRED = 90.days
   belongs_to :company
   belongs_to :category
+  belongs_to :contract
 
   validates :title, :category, :description, :location, presence: true
 

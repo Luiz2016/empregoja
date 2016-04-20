@@ -9,6 +9,8 @@ feature 'User creates a new job' do
 
     category = Category.create(name: 'Desenvolvedor')
 
+    contract = Contract.create(name: 'CLT')
+
     job = Job.new(title: 'Dev Master',
                   location: 'Rio de Janeiro',
                   category: category,
@@ -20,6 +22,7 @@ feature 'User creates a new job' do
     fill_in 'Location',    with: job.location
     select category.name,  from: 'Category'
     select company.name,   from: 'Company'
+    select contract.name,  from: 'Contract'
     fill_in 'Description', with: job.description
 
     click_on 'Criar Vaga'
@@ -28,6 +31,7 @@ feature 'User creates a new job' do
     expect(page).to have_content job.location
     expect(page).to have_content job.category.name
     expect(page).to have_content company.name
+    expect(page).to have_content contract.name
     expect(page).to have_content job.description
   end
 

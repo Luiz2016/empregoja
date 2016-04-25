@@ -1,0 +1,8 @@
+<h1><%= @contracts.name %></h1>
+<h2>Vagas</h2>
+<% @contracts.jobs.each do |job| %>
+  <p><%= job.title %></p>
+  <p><%= job.location %></p>
+  <p><%= job.category.name %></p>
+  <p><%= job.description %></p>
+<% end %>
